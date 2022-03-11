@@ -1,3 +1,24 @@
+<p>This task is made from two parts: development and logical point of view.>
+</p>
+<p>Please prepare your development environment to use Sylius, task is for products and all related tables like taxons (categories), attributes, translations, etc. But from you, we want just products part.</p>
+Business requirements:
+<li>Must have fast CSV import</li> 
+<li>Must have fast CSV export</li>
+<li>Import and Export CSV should have the exact same column schema</li>
+<li>Must have support for Microsoft EXCEL formatted CSV</li>
+<li>Must support regular UTF-8 CSV format</li>
+<li>Must have progress bar for currently importing files (Endpoint can send updated numbers)</li>
+<li>Must have progress bar for currently exporting files (Endpoint can send updated numbers)</li>
+<li>Must have ability to download import files from admin side (Sylius back-office)</li>
+<li>Must have ability to download export files from admin side (Sylius back-office)</li>
+<li>Must send emails when import is complete</li>
+<li>Must send emails when export is complete</li>
+<li>Must support same functionality for Vendors, just for their access scope only (not required)</li>
+<li>Admins must see all file export and have ability to filter them out by user, vendor etc. (not required)</li>
+<li>Must have ETA when file is being export or imported shown to the user (Endpoint can send updated numbers)</li>
+<p>Can be used any library, just add needed author as per license required.</p>
+<p>Code testing - required.</p>
+<p>Comments in code - required.</p>
 <p align="center">
     <a href="https://sylius.com" target="_blank">
         <img src="https://demo.sylius.com/assets/shop/img/logo.png" />
