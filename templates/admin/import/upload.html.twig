@@ -1,0 +1,36 @@
+{% extends '@SyliusAdmin/layout.html.twig' %}
+
+{% import '@SyliusUi/Macro/buttons.html.twig' as buttons %}
+
+{% block title %}Import {{ parent() }}{% endblock %}
+
+{% block content %}
+    <div class="ui stackable two column grid">
+        <div class="twelve wide column">
+            <h1 class="ui header">
+                <i class="circular upload icon"></i>
+                <div class="content">
+                    Product import
+                </div>
+            </h1>
+
+        </div>
+        <div class="four wide right aligned column">
+        </div>
+    </div>
+    <div class="ui segment">
+        <div class="ui two column grid">
+            <div class="column">
+                {{ form_start(form, {'action': path('custom_admin_import_upload', {'type': type}), 'attr': {'class': 'ui loadable form', 'novalidate': 'novalidate'}}) }}
+                {% include '@SyliusAdmin/Crud/form_validation_errors_checker.html.twig' %}
+                {{ form_row(form.file) }}
+            </div>
+            <div class="right aligned column">
+                <button type="submit" class="ui large icon labeled blue button">
+                    <i class="icon upload"></i> Upload
+                </button>
+                {{ form_end(form, {'render_rest': false}) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

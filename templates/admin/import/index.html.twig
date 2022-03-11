@@ -1,7 +1,26 @@
 {% extends '@SyliusAdmin/layout.html.twig' %}
 
+{% import '@SyliusUi/Macro/buttons.html.twig' as buttons %}
+
 {% block title %}Import {{ parent() }}{% endblock %}
 
 {% block content %}
-    adasd``
+    <div class="ui stackable two column grid">
+        <div class="twelve wide column">
+            <h1 class="ui header">
+                <i class="circular upload icon"></i>
+                <div class="content">
+                    Product import
+                </div>
+            </h1>
+
+        </div>
+        <div class="four wide right aligned column">
+                <a class="ui labeled icon button" href= {{ path('custom_admin_import_upload', {'type': 'product'}) }}>
+                    <i class="upload icon"></i>
+                    Upload file
+                </a>
+
+        </div>
+    </div>
 {% endblock %}

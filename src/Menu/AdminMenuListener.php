@@ -15,7 +15,13 @@ class AdminMenuListener
             ->addChild('import')
             ->setLabel('Import');
         $importSubmenu
-            ->addChild('product-import', ['route' => 'custom_admin_product_import_index'])
+            ->addChild(
+                'product-import',
+                [
+                    'route' => 'custom_admin_import_index',
+                    'routeParameters' => ['type' => 'product'],
+                ]
+            )
             ->setLabelAttribute('icon', 'upload')
             ->setLabel('Product import');
 
