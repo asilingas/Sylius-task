@@ -6,6 +6,7 @@ use Sylius\Bundle\UiBundle\Menu\Event\MenuBuilderEvent;
 
 class AdminMenuListener
 {
+    // Custom menu items
     public function addAdminMenuItems(MenuBuilderEvent $event): void
     {
         $menu = $event->getMenu();
