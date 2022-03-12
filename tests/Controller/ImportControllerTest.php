@@ -28,6 +28,12 @@ class ImportControllerTest extends WebTestCase
         $this->assertResponseIsSuccessful();
     }
 
+    public function testUpload(): void
+    {
+        $this->client->request('GET', 'admin/import/upload/product');
+        $this->assertResponseIsSuccessful();
+    }
+
     private function simulateLogin(UserInterface $user): void
     {
         // Get session

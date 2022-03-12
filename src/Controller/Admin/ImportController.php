@@ -14,6 +14,8 @@ use Symfony\Component\Routing\Annotation\Route;
 class ImportController extends AbstractController
 {
     /**
+     * Show file upload form link and previous import list.
+     *
      * @Route("/{type}", name="custom_admin_import_index", methods={"GET"})
      */
     public function indexAction(Request $request, string $type): Response
@@ -22,6 +24,8 @@ class ImportController extends AbstractController
     }
 
     /**
+     * File upload form.
+     *
      * @Route("/upload/{type}", name="custom_admin_import_upload", methods={"GET", "POST"})
      */
     public function uploadAction(Request $request, string $type): Response
