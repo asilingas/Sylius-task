@@ -2,23 +2,23 @@
 
 {% import '@SyliusUi/Macro/buttons.html.twig' as buttons %}
 
-{% block title %}Import {{ parent() }}{% endblock %}
+{% block title %}Export {{ parent() }}{% endblock %}
 
 {% block content %}
     <div class="ui stackable two column grid">
         <div class="twelve wide column">
             <h1 class="ui header">
-                <i class="circular upload icon"></i>
+                <i class="circular download icon"></i>
                 <div class="content">
-                    Import product data
+                    Export product data
                 </div>
             </h1>
 
         </div>
         <div class="four wide right aligned column">
-                <a class="ui labeled icon button" href= {{ path('custom_admin_import_upload', {'type': 'product'}) }}>
-                    <i class="upload icon"></i>
-                    Upload file
+                <a class="ui labeled icon button" href="">
+                    <i class="download icon"></i>
+                    Request product export
                 </a>
         </div>
     </div>

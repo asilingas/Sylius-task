@@ -29,7 +29,13 @@ class AdminMenuListener
             ->addChild('export')
             ->setLabel('Export');
         $exportSubmenu
-            ->addChild('product-export')
+            ->addChild(
+                'product-export',
+                [
+                    'route' => 'custom_admin_export_index',
+                    'routeParameters' => ['type' => 'product'],
+                ]
+            )
             ->setLabelAttribute('icon', 'download')
             ->setLabel('Product export');
     }
