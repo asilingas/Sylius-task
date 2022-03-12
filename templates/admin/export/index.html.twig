@@ -10,15 +10,15 @@
             <h1 class="ui header">
                 <i class="circular download icon"></i>
                 <div class="content">
-                    Export product data
+                    Export {{ type|capitalize }} data
                 </div>
             </h1>
 
         </div>
         <div class="four wide right aligned column">
-                <a class="ui labeled icon button" href="">
+                <a class="ui labeled icon button" href="{{ path('custom_admin_export_request', {'type': type}) }}">
                     <i class="download icon"></i>
-                    Request product export
+                    Request {{ type|capitalize }} export
                 </a>
         </div>
     </div>

@@ -10,13 +10,13 @@
             <h1 class="ui header">
                 <i class="circular upload icon"></i>
                 <div class="content">
-                    Import product data
+                    Import {{ type|capitalize }} data
                 </div>
             </h1>
 
         </div>
         <div class="four wide right aligned column">
-                <a class="ui labeled icon button" href= {{ path('custom_admin_import_upload', {'type': 'product'}) }}>
+                <a class="ui labeled icon button" href="{{ path('custom_admin_import_upload', {'type': 'product'}) }}">
                     <i class="upload icon"></i>
                     Upload file
                 </a>

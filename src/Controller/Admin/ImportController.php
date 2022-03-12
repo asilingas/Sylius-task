@@ -20,7 +20,7 @@ class ImportController extends AbstractController
      */
     public function indexAction(Request $request, string $type): Response
     {
-        return $this->render('admin/import/index.html.twig');
+        return $this->render('admin/import/index.html.twig', ['type' => $type]);
     }
 
     /**
