@@ -29,12 +29,12 @@ final class Kernel extends BaseKernel
 
     public function getCacheDir(): string
     {
-        return $this->getProjectDir() . '/var/cache/' . $this->environment;
+        return '/dev/shm/app/cache';
     }
 
     public function getLogDir(): string
     {
-        return $this->getProjectDir() . '/var/log';
+        return '/dev/shm/app/logs';
     }
 
     public function registerBundles(): iterable
