@@ -2,6 +2,8 @@
 
 {% import '@SyliusUi/Macro/buttons.html.twig' as buttons %}
 
+{% import '@SyliusUi/Macro/messages.html.twig' as messages %}
+
 {% block title %}Export {{ parent() }}{% endblock %}
 
 {% block content %}
@@ -21,5 +23,20 @@
                     Request {{ type|capitalize }} export
                 </a>
         </div>
+    </div>
+    <div>
+    {% if exports is not empty %}
+        <ul class="ui bulleted list">
+            {% for export in exports %}
+                <li>
+                    <a href="{{ path('custom_admin_export_download', {'guid': export.guid}) }}">
+                        {{ export.filename }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        {{ messages.info('sylius.ui.no_results_to_display') }}
+    {% endif %}
     </div>
 {% endblock %}

@@ -43,6 +43,7 @@ class ExportService
     }
 
     // Process export job
+    // Could be improved by using Gauffrete with different filesystem adapters
     public function process(Export $export): void
     {
         $totalItems = $this->productRepository->count([]);
@@ -67,7 +68,7 @@ class ExportService
     // Unique filename
     private function generateFilename(string $type): string
     {
-        return sprintf('%s_%s_%s.csv', $type, (new \DateTime())->format('ymd_his'), Uuid::uuid4());
+        return sprintf('%s_%s_%s.csv', $type, (new \DateTime())->format('Ymd_his'), Uuid::uuid4());
     }
 
     // Writes a batch of rows to file

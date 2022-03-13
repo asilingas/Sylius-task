@@ -3,6 +3,7 @@
 namespace App\Entity\Export;
 
 use Doctrine\ORM\Mapping as ORM;
+use Ramsey\Uuid\Uuid;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
@@ -45,6 +46,11 @@ class Export
     private \DateTime $updated;
 
     /**
+     * @ORM\Column(name="guid", type="guid", unique=true)
+     */
+    private string $guid;
+
+    /**
      * @ORM\Column(name="type", type="string", length=255)
      */
     private string $type;
@@ -73,6 +79,7 @@ class Export
     {
         $this->created = new \DateTime();
         $this->updated = new \DateTime();
+        $this->guid = Uuid::uuid4();
         $this->totalItems = 0;
         $this->processedItems = 0;
         $this->status = self::STATUS_CREATED;
@@ -110,6 +117,18 @@ class Export
     public function setUpdated(\DateTime $updated): Export
     {
         $this->updated = $updated;
+
+        return $this;
+    }
+
+    public function getGuid(): string
+    {
+        return $this->guid;
+    }
+
+    public function setGuid(string $guid): Export
+    {
+        $this->guid = $guid;
 
         return $this;
     }

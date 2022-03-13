@@ -2,7 +2,6 @@
 
 namespace App\Repository;
 
-use Doctrine\ORM\Query\Expr\Join;
 use Sylius\Bundle\CoreBundle\Doctrine\ORM\ProductRepository as ParentRepository;
 
 class ProductRepository extends ParentRepository
