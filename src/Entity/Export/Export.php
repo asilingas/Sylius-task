@@ -4,6 +4,7 @@ namespace App\Entity\Export;
 
 use Doctrine\ORM\Mapping as ORM;
 use Ramsey\Uuid\Uuid;
+use Sylius\Component\Resource\Model\ResourceInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
@@ -12,7 +13,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
  * @ORM\Entity(repositoryClass="App\Repository\ExportRepository")
  * @ORM\Table(name="export")
  */
-class Export
+class Export implements ResourceInterface
 {
     const STATUS_CREATED = 0;
     const STATUS_IN_PROGRESS = 1;
