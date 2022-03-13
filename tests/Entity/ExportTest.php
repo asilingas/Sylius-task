@@ -2,7 +2,7 @@
 
 namespace App\Tests\Entity;
 
-use App\Entity\Export\Export;
+use App\Entity\Custom\Export;
 use App\Entity\User\AdminUser;
 use PHPUnit\Framework\TestCase;
 

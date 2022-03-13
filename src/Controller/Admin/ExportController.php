@@ -2,7 +2,7 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\Export\Export;
+use App\Entity\Custom\Export;
 use App\Repository\ExportRepository;
 use App\Service\ExportService;
 use App\Message\ExportRequest;

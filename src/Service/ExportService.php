@@ -2,7 +2,7 @@
 
 namespace App\Service;
 
-use App\Entity\Export\Export;
+use App\Entity\Custom\Export;
 use App\Repository\ProductRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Ramsey\Uuid\Uuid;

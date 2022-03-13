@@ -2,7 +2,7 @@
 
 namespace App\Repository;
 
-use App\Entity\Export\Export;
+use App\Entity\Custom\Export;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\Security\Core\User\UserInterface;

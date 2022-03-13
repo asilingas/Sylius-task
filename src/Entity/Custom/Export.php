@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Entity\Export;
+namespace App\Entity\Custom;
 
 use Doctrine\ORM\Mapping as ORM;
 use Ramsey\Uuid\Uuid;
