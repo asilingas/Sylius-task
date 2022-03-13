@@ -8,6 +8,7 @@ use App\Service\ExportService;
 use App\Message\ExportRequest;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\ResponseHeaderBag;
@@ -74,7 +75,7 @@ class ExportController extends AbstractController
      * @Route("/download/{guid}", name="custom_admin_export_download", methods={"GET"})
      * @ParamConverter("export", class="App\Entity\Export\Export")
      */
-    public function downloadAction(Export $export): Response
+    public function downloadAction(Export $export): BinaryFileResponse
     {
         $response = new BinaryFileResponse('export/' . $export->getFilename());
         $response->setContentDisposition(
@@ -83,5 +84,22 @@ class ExportController extends AbstractController
         );
 
         return $response;
+    }
+
+    /**
+     * Data for progress bar.
+     * TODO move to FOS REST or API Platform
+     *
+     * @Route("/progress/{id}", name="custom_admin_export_progress", methods={"GET"})
+     * @ParamConverter("export", class="App\Entity\Export\Export")
+     */
+    public function progressAction(Export $export): JsonResponse
+    {
+        return new JsonResponse(
+            [
+                'processed' => $export->getProcessedItemCount(),
+                'total' => $export->getTotalItemCount(),
+            ]
+        );
     }
 }

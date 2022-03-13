@@ -64,12 +64,12 @@ class Export implements ResourceInterface
     /**
      * @ORM\Column(name="total_items", type="integer")
      */
-    private int $totalItems;
+    private int $totalItemCount;
 
     /**
      * @ORM\Column(name="processed_items", type="integer")
      */
-    private int $processedItems;
+    private int $processedItemCount;
 
     /**
      * @ORM\Column(name="status", type="smallint")
@@ -81,8 +81,8 @@ class Export implements ResourceInterface
         $this->created = new \DateTime();
         $this->updated = new \DateTime();
         $this->guid = Uuid::uuid4();
-        $this->totalItems = 0;
-        $this->processedItems = 0;
+        $this->totalItemCount = 0;
+        $this->processedItemCount = 0;
         $this->status = self::STATUS_CREATED;
     }
 
@@ -163,26 +163,26 @@ class Export implements ResourceInterface
         return $this;
     }
 
-    public function getTotalItems(): int
+    public function getTotalItemCount(): int
     {
-        return $this->totalItems;
+        return $this->totalItemCount;
     }
 
-    public function setTotalItems(int $totalItems): Export
+    public function setTotalItemCount(int $totalItemCount): Export
     {
-        $this->totalItems = $totalItems;
+        $this->totalItemCount = $totalItemCount;
 
         return $this;
     }
 
-    public function getProcessedItems(): int
+    public function getProcessedItemCount(): int
     {
-        return $this->processedItems;
+        return $this->processedItemCount;
     }
 
-    public function setProcessedItems(int $processedItems): Export
+    public function setProcessedItemCount(int $processedItemCount): Export
     {
-        $this->processedItems = $processedItems;
+        $this->processedItemCount = $processedItemCount;
 
         return $this;
     }

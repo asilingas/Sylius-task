@@ -96,7 +96,7 @@ class ExportService
     private function updateExportStart(Export $export, int $totalItems): void
     {
         $export
-            ->setTotalItems($totalItems)
+            ->setTotalItemCount($totalItems)
             ->setStatus(Export::STATUS_IN_PROGRESS);
         $this->update($export);
     }
@@ -104,7 +104,7 @@ class ExportService
     // Updates Export entity's state
     private function updateExport(Export $export, int $processedItems): void
     {
-        $export->setProcessedItems($processedItems);
+        $export->setProcessedItemCount($processedItems);
         $this->update($export);
     }
 
