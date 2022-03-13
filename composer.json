@@ -25,6 +25,7 @@
     ],
     "require": {
         "php": "^8.0",
+        "sensio/framework-extra-bundle": "^6.2",
         "sylius/mailer-bundle": "^1.6",
         "sylius/paypal-plugin": "^1.2.1",
         "sylius/sylius": "^1.11",
