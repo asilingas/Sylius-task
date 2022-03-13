@@ -16,6 +16,7 @@ class Export
     const STATUS_CREATED = 0;
     const STATUS_IN_PROGRESS = 1;
     const STATUS_DONE = 2;
+    const STATUS_FAILED = 3;
     const TYPE_PRODUCT = 'product';
 
     /**

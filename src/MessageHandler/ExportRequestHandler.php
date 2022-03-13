@@ -23,6 +23,6 @@ class ExportRequestHandler implements MessageHandlerInterface
     public function __invoke(ExportRequest $exportRequest)
     {
         $export = $this->exportRepository->find($exportRequest->getExportId());
-        $this->exportService->startProcess($export);
+        $this->exportService->process($export);
     }
 }
