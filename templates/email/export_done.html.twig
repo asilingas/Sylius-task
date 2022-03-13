@@ -1,0 +1,9 @@
+{% block subject %}
+    Export file is ready
+{% endblock %}
+
+{% block body %}
+    {% autoescape %}
+        Export file <a href="{{ url('custom_admin_export_download', {'guid': export.guid}) }}">{{ export.filename }}</a> can be downloaded.
+    {% endautoescape %}
+{% endblock %}

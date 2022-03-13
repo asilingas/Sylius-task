@@ -1,0 +1,8 @@
+sylius_mailer:
+    sender:
+        name: Example.com
+        address: no-reply@example.com
+    emails:
+        export_done:
+            subject: "Export file is ready!"
+            template: "email/export_done.html.twig"
