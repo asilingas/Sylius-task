@@ -1,0 +1,9 @@
+{% block subject %}
+    File data was successfully imported
+{% endblock %}
+
+{% block body %}
+    {% autoescape %}
+        File {{ import.filename }} data was successfully imported.
+    {% endautoescape %}
+{% endblock %}

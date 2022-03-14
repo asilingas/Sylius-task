@@ -5,7 +5,7 @@ namespace App\Message;
 // For export job dispatching
 class ExportRequest implements AsyncMessageInterface
 {
-    private string $exportId;
+    private int $exportId;
 
     public function __construct(int $exportId)
     {

@@ -9,7 +9,7 @@ use Symfony\Component\Validator\Constraints\File;
 
 class UploadFileType extends AbstractType
 {
-    const VALID_MIME_TYPES = ['text/plain', 'text/csv', 'application/vnd.ms-excel'];
+    const VALID_MIME_TYPES = ['text/plain', 'text/csv', 'application/csv', 'application/vnd.ms-excel'];
 
     public function buildForm(FormBuilderInterface $builder, array $options)
     {

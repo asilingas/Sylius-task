@@ -2,6 +2,8 @@
 /public/css
 /public/js
 /public/media
+/public/import
+/public/export
 !/public/media/image/.gitkeep
 
 /node_modules

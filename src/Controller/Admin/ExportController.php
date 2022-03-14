@@ -73,7 +73,7 @@ class ExportController extends AbstractController
      * Serves export file.
      *
      * @Route("/download/{guid}", name="custom_admin_export_download", methods={"GET"})
-     * @ParamConverter("export", class="App\Entity\Export\Export")
+     * @ParamConverter("export", class="App\Entity\Custom\Export")
      */
     public function downloadAction(Export $export): BinaryFileResponse
     {
@@ -91,7 +91,7 @@ class ExportController extends AbstractController
      * TODO move to FOS REST or API Platform
      *
      * @Route("/progress/{id}", name="custom_admin_export_progress", methods={"GET"})
-     * @ParamConverter("export", class="App\Entity\Export\Export")
+     * @ParamConverter("export", class="App\Entity\Custom\Export")
      */
     public function progressAction(Export $export): JsonResponse
     {

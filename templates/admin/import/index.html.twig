@@ -2,6 +2,8 @@
 
 {% import '@SyliusUi/Macro/buttons.html.twig' as buttons %}
 
+{% import '@SyliusUi/Macro/messages.html.twig' as messages %}
+
 {% block title %}Import {{ parent() }}{% endblock %}
 
 {% block content %}
@@ -21,5 +23,20 @@
                     Upload file
                 </a>
         </div>
+    </div>
+    <div>
+        {% if imports is not empty %}
+            <ul class="ui bulleted list">
+                {% for import in imports %}
+                    <li>
+                        <a href="{{ path('custom_admin_import_download', {'guid': import.guid}) }}">
+                            {{ import.filename }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            {{ messages.info('sylius.ui.no_results_to_display') }}
+        {% endif %}
     </div>
 {% endblock %}

@@ -62,7 +62,7 @@ class ExportService
             }
             // Closing file
             fclose($file);
-            $this->updateExportFinish($export);
+            $this->updateExportFinish($export, $i);
         } catch (\Exception $exception) {
             $this->updateExportFailure($export);
 
@@ -109,9 +109,11 @@ class ExportService
     }
 
     // Updates Export entity's state
-    private function updateExportFinish(Export $export): void
+    private function updateExportFinish(Export $export, int $i): void
     {
-        $export->setStatus(Export::STATUS_DONE);
+        $export
+            ->setStatus(Export::STATUS_DONE)
+            ->setProcessedItemCount($i);
         $this->update($export);
     }
 

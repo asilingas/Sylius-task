@@ -6,3 +6,6 @@ sylius_mailer:
         export_done:
             subject: "Export file is ready!"
             template: "email/export_done.html.twig"
+        import_done:
+            subject: "File data was successfully imported!"
+            template: "email/import_done.html.twig"
